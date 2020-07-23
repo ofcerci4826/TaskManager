@@ -7,3 +7,11 @@ C:\Users\MehmetYavuz\Desktop\TaskManager\TaskManager\TaskCore\obj\Debug\netcorea
 C:\Users\MehmetYavuz\Desktop\TaskManager\TaskManager\TaskCore\obj\Debug\netcoreapp2.2\TaskCore.dll
 C:\Users\MehmetYavuz\Desktop\TaskManager\TaskManager\TaskCore\obj\Debug\netcoreapp2.2\TaskCore.pdb
 C:\Users\MehmetYavuz\Desktop\TaskManager\TaskManager\TaskCore\obj\Debug\netcoreapp2.2\TaskCore.csprojAssemblyReference.cache
+D:\GithubProjeler\TaskManager\TaskCore\bin\Debug\netcoreapp2.2\TaskCore.deps.json
+D:\GithubProjeler\TaskManager\TaskCore\bin\Debug\netcoreapp2.2\TaskCore.dll
+D:\GithubProjeler\TaskManager\TaskCore\bin\Debug\netcoreapp2.2\TaskCore.pdb
+D:\GithubProjeler\TaskManager\TaskCore\obj\Debug\netcoreapp2.2\TaskCore.csproj.CoreCompileInputs.cache
+D:\GithubProjeler\TaskManager\TaskCore\obj\Debug\netcoreapp2.2\TaskCore.AssemblyInfoInputs.cache
+D:\GithubProjeler\TaskManager\TaskCore\obj\Debug\netcoreapp2.2\TaskCore.AssemblyInfo.cs
+D:\GithubProjeler\TaskManager\TaskCore\obj\Debug\netcoreapp2.2\TaskCore.dll
+D:\GithubProjeler\TaskManager\TaskCore\obj\Debug\netcoreapp2.2\TaskCore.pdb

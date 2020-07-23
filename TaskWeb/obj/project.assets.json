@@ -13012,11 +13012,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MehmetYavuz\\Desktop\\TaskManager\\TaskManager\\TaskWeb\\TaskWeb.csproj",
+      "projectUniqueName": "D:\\GithubProjeler\\TaskManager\\TaskWeb\\TaskWeb.csproj",
       "projectName": "TaskWeb",
-      "projectPath": "C:\\Users\\MehmetYavuz\\Desktop\\TaskManager\\TaskManager\\TaskWeb\\TaskWeb.csproj",
+      "projectPath": "D:\\GithubProjeler\\TaskManager\\TaskWeb\\TaskWeb.csproj",
       "packagesPath": "C:\\Users\\MehmetYavuz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MehmetYavuz\\Desktop\\TaskManager\\TaskManager\\TaskWeb\\obj\\",
+      "outputPath": "D:\\GithubProjeler\\TaskManager\\TaskWeb\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13036,8 +13036,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\MehmetYavuz\\Desktop\\TaskManager\\TaskManager\\TaskCore\\TaskCore.csproj": {
-              "projectPath": "C:\\Users\\MehmetYavuz\\Desktop\\TaskManager\\TaskManager\\TaskCore\\TaskCore.csproj"
+            "D:\\GithubProjeler\\TaskManager\\TaskCore\\TaskCore.csproj": {
+              "projectPath": "D:\\GithubProjeler\\TaskManager\\TaskCore\\TaskCore.csproj"
             }
           }
         }

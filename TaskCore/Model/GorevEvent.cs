@@ -110,5 +110,16 @@ namespace TaskCore.Model
                     return row.GetString("Result");
                 });
         }
+
+        public static string Sil(long Id)
+        {
+
+            return Sql.GetInstance().Get("sp_gorev_sil", new List<object> {
+                Id
+                }, (row) =>
+                {
+                    return row.GetString("Result");
+                });
+        }
     }
 }

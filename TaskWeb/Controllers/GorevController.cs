@@ -41,7 +41,7 @@ namespace TaskWeb.Controllers
         {
             var result = GorevEvent.Detay(Id);
             if (result == null || result.id <= 0)
-                return View("NotFound");
+                return RedirectToAction("Index");
 
             return View(result);
         }
@@ -51,6 +51,11 @@ namespace TaskWeb.Controllers
            
             return Content(AppResponse.Return(GorevEvent.Guncelle(param)));
         }
-        
+
+        [HttpPost]
+        public IActionResult Sil(long Id)
+        {
+            return Content(AppResponse.Return(GorevEvent.Sil(Id)));
+        }
     }
 }

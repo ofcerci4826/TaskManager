@@ -8715,11 +8715,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MehmetYavuz\\Desktop\\TaskManager\\TaskManager\\TaskCore\\TaskCore.csproj",
+      "projectUniqueName": "D:\\GithubProjeler\\TaskManager\\TaskCore\\TaskCore.csproj",
       "projectName": "TaskCore",
-      "projectPath": "C:\\Users\\MehmetYavuz\\Desktop\\TaskManager\\TaskManager\\TaskCore\\TaskCore.csproj",
+      "projectPath": "D:\\GithubProjeler\\TaskManager\\TaskCore\\TaskCore.csproj",
       "packagesPath": "C:\\Users\\MehmetYavuz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MehmetYavuz\\Desktop\\TaskManager\\TaskManager\\TaskCore\\obj\\",
+      "outputPath": "D:\\GithubProjeler\\TaskManager\\TaskCore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
