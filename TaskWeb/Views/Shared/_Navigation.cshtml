@@ -1,0 +1,82 @@
+﻿@model List<Menu>
+    @{
+        var oturum = Kullanici.Oturum();
+        if (oturum == null)
+        {
+            oturum = new Kullanici();
+        }
+
+        string action = ViewContext.RouteData.Values["Action"].ToString().ToLower();
+        string controller = ViewContext.RouteData.Values["Controller"].ToString().ToLower();
+    }
+    <div id="navigation">
+        <div class="profile-picture">
+            Sn.
+            <div class="stats-label text-color">
+                <span class="font-extra-bold font-normal">@Kullanici.Oturum().AdSoyad</span><br />
+                Hoşgeldiniz
+                <div class="dropdown">
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                        <small class="text-muted">Hesap <b class="caret"></b></small>
+                    </a>
+                    <ul class="dropdown-menu animated flipInX m-t-xs user-info">
+                     
+                        <li><a href="@Url.Action("Cikis", "Kullanici")">Çıkış</a></li>
+                    </ul>
+                </div>
+
+                @*@await Html.PartialAsync("_SelectLanguagePartial")*@
+            </div>
+        </div>
+
+        <ul class="nav metismenu" id="side-menu">
+
+            @foreach (var menu in Model)
+            {
+                if (!oturum.IsAuthorized(menu.Controller, "*"))
+                {
+                    continue;
+                }
+                <li class="@(menu.Controller.ToLower().Equals(controller) ? "active" : "")">
+                    <a href="@(menu.SubMenu.Count <= 0 ? Url.Action("Index", menu.Controller) : "#")">
+                        <span class="nav-label">@menu.Name</span>@if (menu.SubMenu.Count > 0)
+                        {<span class="fa arrow"></span>}
+                    </a>
+                    @if (menu.SubMenu.Count > 0)
+                    {
+                        <ul class="nav nav-second-level">
+
+                            @foreach (var item in menu.SubMenu)
+                            {
+                                if (!oturum.IsAuthorized(menu.Controller, item.Action))
+                                {
+                                    continue;
+                                }
+                                <li class="@((menu.Controller.ToLower().Equals(controller) && item.Action.ToLower().Equals(action)) ? "active" : "")">
+                                    <a href="@Url.Action(item.Action, menu.Controller)">
+                                        @item.Name
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    }
+                </li>
+            }
+
+        </ul>
+    </div>
+
+    @*@section Scripts {
+            @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+
+            <script type="text/javascript">
+
+                $(function () {
+                    $(".select-Dil").select2({
+                        placeholder: "Lütfen Dil Seçiniz",
+                    });
+
+                });
+
+            </script>
+        }*@

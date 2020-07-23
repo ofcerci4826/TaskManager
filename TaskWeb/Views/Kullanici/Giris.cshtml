@@ -1,0 +1,43 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout_Blank.cshtml";
+    ViewData["Title"] = "Giriş Yap";
+}
+<input id="returnUrl" type="hidden" value="@Url.Action("Index", "Home")" />
+<div class="login-container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center m-b-md">
+
+                <h3>Giriş Yap </h3>
+                <small>Görev Yöneticisi</small>
+            </div>
+            <div class="hpanel">
+                <div class="panel-body">
+                    <form action="@Url.Action("Giris", "Kullanici")" method="post" data-reset="true" id="loginForm">
+                        <div class="form-group">
+                            <label class="control-label" for="username">Eposta</label>
+                            <input type="text" placeholder="Eposta" title="Eposta Gerekli" value="" name="Eposta" id="Eposta" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="password">Parola</label>
+                            <input type="password" title="Parola Gerekli" placeholder="******" value="" name="Parola" id="Parola" class="form-control">
+                        </div>
+                       
+                        <button class="btn btn-primary btn-block">Giriş</button>
+                       
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row" style="padding-top:25px;">
+        <div class="col-md-12 text-center">
+            <strong>Görev Yöneticisi</strong>  <br /> @DateTime.Now.Year
+        </div>
+    </div>
+</div>
+
+

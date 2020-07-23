@@ -1,0 +1,157 @@
+﻿@model GorevEvent
+@{
+    ViewData["Title"] = "Detay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="content">
+    <div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="hpanel">
+                    <div class="panel-heading">
+                        <div class="panel-tools">
+                            <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                            <a class="closebox"><i class="fa fa-times"></i></a>
+                        </div>
+                        Görev Detay
+                    </div>
+                    <div class="panel-body">
+                        <input type="hidden" id="returnUrl" value="@Url.Action("Index", "Gorev")" />
+                        <form action="@Url.Action("Guncelle", "Gorev")" method="post" data-reset="true" id="gorevGuncelleForm" class="form-horizontal form-submit">
+
+                            <input type="hidden" name="id" value="@Model.id" />
+
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Kullanıcı</label>
+                                <div class="col-sm-8">
+                                    <select class="selectKullanici" style="width: 100%" name="refKullanici">
+                                        <option value="0"> Kullanıcı Seçiniz  </option>
+                                        @foreach (var item in Kullanici.Listele())
+                                        {
+                                            if (Model.refKullanici == item.Id)
+                                            {
+                                                <option selected value="@item.Id">  @item.AdSoyad  </option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@item.Id">  @item.AdSoyad  </option>
+                                            }
+
+                                        }
+                                    </select>
+                                    <span class="help-block m-b-none"> <i>Görev sahibini seçiniz.</i></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Görev Ad</label>
+
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" name="GorevAd" value="@Model.GorevAd">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Baslangıç</label>
+
+                                <div class="col-sm-8">
+                                    <div class="input-group date" id="dtBaslangic">
+                                        <span class="input-group-addon">
+                                            <span class="fa fa-calendar"></span>
+                                        </span>
+                                        <input type="text" class="form-control" name="start" value="@Model.start">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Bitiş</label>
+
+                                <div class="col-sm-8">
+                                    <div class="input-group date" id="dtBitis">
+                                        <span class="input-group-addon">
+                                            <span class="fa fa-calendar"></span>
+                                        </span>
+                                        <input type="text" class="form-control" name="end" value="@Model.end">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Görev Durum</label>
+                                <div class="col-sm-8">
+                                    <select class="selectGorevDurum" style="width: 100%" name="refDurum">
+                                        <option value="0"> Görev Durumu Seçiniz  </option>
+                                        @foreach (var item in GorevDurum.Listele())
+                                        {
+                                            if (Model.refDurum == item.Id)
+                                            {
+                                                <option selected value="@item.Id">  @item.Durum  </option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@item.Id">  @item.Durum  </option>
+                                            }
+
+                                        }
+                                    </select>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"> Not</label>
+
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" name="Not" value="@Model.Not">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-12 col-sm-offset-10">
+
+                                    <button class="btn btn-primary" type="submit">Kaydet</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+
+
+    <script type="text/javascript">
+
+        $(function () {
+            $(".selectKullanici").select2({
+                placeholder: "Kullanıcı Seçiniz",
+            });
+
+            $(".selectGorevDurum").select2({
+                placeholder: "Durum Seçiniz",
+            });
+
+
+            $('#dtBaslangic').datetimepicker({
+                format: 'DD.MM.YYYY HH:mm'
+            });
+
+            $('#dtBitis').datetimepicker({
+                format: 'DD.MM.YYYY HH:mm'
+            });
+        });
+    </script>
+
+
+
+}
+

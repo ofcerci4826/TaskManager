@@ -1,0 +1,43 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<div class="error-container">
+    <i class="pe-7s-way  big-icon" style="color:rgb(255, 204, 51);"></i>
+
+    @if (Model.Status == 500 || Model.Status == 501)
+    {
+        <i class="material-icons" style="font-size:96px; color:#ff0000;">
+            whatshot
+        </i>
+        <h1 class="text-danger" style="font-size:36px; margin-bottom:16px; margin-top:24px;">HATA OLUŞTU</h1>
+        <h2 class="text-danger" style="font-size:18px; margin-bottom:16px;">İşleminiz gerçekleştirilirken bir hata oluştu.</h2>
+
+        @if (Model.ShowRequestId)
+        {
+            <p>
+                <strong>İstek Numarası :</strong> <code>@Model.RequestId</code>
+            </p>
+        }
+
+        <p>
+            Hatanın nedeni için yukarıdaki istek numarasıyla birlikte lütfen sistem yöneticinize başvurunuz.
+        </p>
+
+    }
+    else
+    {
+        <i class="material-icons" style="font-size:96px; color:#ff0000;">
+            block
+        </i>
+        <h1 class="text-danger" style="font-size:36px; margin-bottom:16px; margin-top:24px;">403</h1>
+        <h2 class="text-danger" style="font-size:18px; margin-bottom:16px;">Bu sayfaya giriş yetkiniz bulunmamaktadır.</h2>
+    }
+    @*<h1>403</h1>
+    <h4>Bu sayfaya giriş yetkiniz bulunmamaktadır</h4>
+    <p>
+       
+    </p>*@
+    @*<a href="index.html" class="btn btn-xs btn-success">Go back to dashboard</a>*@
+</div>

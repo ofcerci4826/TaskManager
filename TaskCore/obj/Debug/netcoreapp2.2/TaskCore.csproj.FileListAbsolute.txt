@@ -1,0 +1,9 @@
+C:\Users\MehmetYavuz\Desktop\TaskManager\TaskManager\TaskCore\bin\Debug\netcoreapp2.2\TaskCore.deps.json
+C:\Users\MehmetYavuz\Desktop\TaskManager\TaskManager\TaskCore\bin\Debug\netcoreapp2.2\TaskCore.dll
+C:\Users\MehmetYavuz\Desktop\TaskManager\TaskManager\TaskCore\bin\Debug\netcoreapp2.2\TaskCore.pdb
+C:\Users\MehmetYavuz\Desktop\TaskManager\TaskManager\TaskCore\obj\Debug\netcoreapp2.2\TaskCore.csproj.CoreCompileInputs.cache
+C:\Users\MehmetYavuz\Desktop\TaskManager\TaskManager\TaskCore\obj\Debug\netcoreapp2.2\TaskCore.AssemblyInfoInputs.cache
+C:\Users\MehmetYavuz\Desktop\TaskManager\TaskManager\TaskCore\obj\Debug\netcoreapp2.2\TaskCore.AssemblyInfo.cs
+C:\Users\MehmetYavuz\Desktop\TaskManager\TaskManager\TaskCore\obj\Debug\netcoreapp2.2\TaskCore.dll
+C:\Users\MehmetYavuz\Desktop\TaskManager\TaskManager\TaskCore\obj\Debug\netcoreapp2.2\TaskCore.pdb
+C:\Users\MehmetYavuz\Desktop\TaskManager\TaskManager\TaskCore\obj\Debug\netcoreapp2.2\TaskCore.csprojAssemblyReference.cache

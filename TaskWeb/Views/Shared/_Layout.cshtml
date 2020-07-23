@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] | Görev Yöneticisi</title>
+
+    <!-- Add local styles, mostly for plugins css file -->
+    @if (IsSectionDefined("Styles"))
+    {@RenderSection("Styles", required: false)}
+
+
+    <link rel="stylesheet" href="~/lib_local/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/fontawesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/lib/animate.css/animate.min.css" />
+    <link rel="stylesheet" href="~/Icons/pe-icon-7-stroke/css/pe-icon-7-stroke.css" />
+    <link rel="stylesheet" href="~/lib_local/metisMenu/dist/metisMenu.min.css" />
+    <link rel="stylesheet" href="~/lib/sweetalert/dist/sweetalert.css" />
+    <link rel="stylesheet" href="~/css/globalloading.css" />
+    <link rel="stylesheet" href="~/lib/toastr/toastr.min.css" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib_local/select2/dist/css/select2.min.css" />
+    <link rel="stylesheet" href="~/lib/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css">
+    <link rel="stylesheet" href="~/lib_local/datatables.net-bs/css/dataTables.bootstrap.min.css" />
+
+    <link href="~/lib_local/fullcalendar-scheduler-4.3.1/packages/core/main.css" rel="stylesheet" />
+    <link href="~/lib_local/fullcalendar-scheduler-4.3.1/packages/daygrid/main.css" rel="stylesheet" />
+    <link href="~/lib_local/fullcalendar-scheduler-4.3.1/packages/timegrid/main.css" rel="stylesheet" />
+    <link href="~/lib_local/fullcalendar-scheduler-4.3.1/packages-premium/timeline/main.css" rel="stylesheet" />
+    <link href="~/lib_local/fullcalendar-scheduler-4.3.1/packages-premium/resource-timeline/main.css" rel="stylesheet" />
+    <link href="~/lib_local/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/lib_local/jquery/dist/jquery.min.js"></script>
+
+
+
+</head>
+<body class="sidebar-scroll fixed-navbar ">
+
+    <div id="header">
+        @await Html.PartialAsync("_Header")
+    </div>
+
+    <!-- Navigation -->
+    <aside id="menu">
+        @await Html.PartialAsync("_Navigation", new List<Menu>() {
+
+        new Menu {
+          Controller = "Home",
+          Name = "Anasayfa",
+          Icon = "dashboard"
+      },
+        new Menu {
+          Controller = "Gorev",
+          Name = "Görev Yönetimi",
+          Icon = "dashboard",
+               SubMenu = new List<MenuSub>() {
+             new MenuSub {
+                Action = "Index",
+                    Name = "Görev Listesi",
+                    Icon = "recent_actors"
+             },
+             new MenuSub {
+                Action = "Olustur",
+                    Name = "Görev Oluştur",
+                    Icon = "recent_actors"
+             }
+         }
+      }
+      })
+        @*@Html.Partial("_Navigation")*@
+    </aside>
+
+    <!-- Main view  -->
+    <div id="wrapper">
+        @RenderBody()
+    </div>
+
+    <script type="text/javascript" src="~/lib_local/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="~/lib_local/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/lib/iCheck/icheck.min.js"></script>
+    <script src="~/lib_local/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="~/lib/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="~/lib/toastr/toastr.min.js"></script>
+
+    <script src="~/Mainjs/globalloading.js" asp-append-version="true"></script>
+    <script src="~/Mainjs/toast.js" asp-append-version="true"></script>
+    <script src="~/Mainjs/main.js" asp-append-version="true"></script>
+    <script src="~/Mainjs/network.js" asp-append-version="true"></script>
+    <script src="~/js/homer.js" asp-append-version="true"></script>
+    <script src="~/lib_local/select2/dist/js/select2.min.js"></script>
+    <script src="~/lib_local/moment/moment.js"></script>
+    
+    <script type="text/javascript" src="~/lib/signalr/dist/browser/signalr.js"></script>
+
+    <script src="~/lib_local/sweetalert2/dist/sweetalert2.all.min.js"></script>
+
+    <script src="~/lib_local/fullcalendar-scheduler-4.3.1/packages/core/main.js"></script>
+    <script src="~/lib_local/fullcalendar-scheduler-4.3.1/packages/interaction/main.js"></script>
+    <script src="~/lib_local/fullcalendar-scheduler-4.3.1/packages/daygrid/main.js"></script>
+    <script src="~/lib_local/fullcalendar-scheduler-4.3.1/packages/timegrid/main.js"></script>
+
+    <script src="~/lib_local/fullcalendar-scheduler-4.3.1/packages-premium/timeline/main.js"></script>
+    <script src="~/lib_local/fullcalendar-scheduler-4.3.1/packages-premium/resource-common/main.js"></script>
+    <script src="~/lib_local/fullcalendar-scheduler-4.3.1/packages-premium/resource-timeline/main.js"></script>
+    <script src="~/lib_local/fullcalendar/core/locales-all.js"></script>
+    <script src="~/Mainjs/popper.min.js"></script>
+    <script src="~/Mainjs/tooltip.min.js"></script>
+
+    <script src="~/lib_local/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    @*<script src="~/lib/datapicker/js/bootstrap-datepicker.js"></script>*@
+
+    <script>
+
+    </script>
+    @RenderSection("Scripts", required: false)
+    @section Scripts {
+        @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+
+        <script type="text/javascript">
+
+
+
+        </script>
+    }
+</body>
+</html>
